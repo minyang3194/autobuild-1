@@ -94,7 +94,7 @@ jobs:
       run: |
         sudo -E apt-get -qq update -y
         sudo -E apt-get -qq full-upgrade -y
-        sudo -E apt-get -qq install -y gawk git ccache gettext libssl-dev xsltproc zip git-core wget curl grep python2.7 python3 python3-pip python3-ply python-docutils
+        sudo -E apt-get -qq install -y gawk git ccache gettext libssl-dev xsltproc zip git-core wget curl grep python2.7 python3 python3-pip python3-ply
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /${{ env.DIYWORKING }}
         sudo chown $USER:$GROUPS /${{ env.DIYWORKING }}
