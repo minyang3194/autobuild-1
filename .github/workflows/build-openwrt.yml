@@ -61,9 +61,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [COOLSNOWWOLF]
+        target: [Lede,Immortalwrt,Lienol,X_wrt,Official,Amlogic]
 
-        # [XWRT]
+        # [Lede,Immortalwrt,Lienol,X_wrt,Official,Amlogic]
 
     
     steps:
