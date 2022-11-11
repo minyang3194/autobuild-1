@@ -53,11 +53,13 @@ jobs:
         cp -Rf ${GITHUB_WORKSPACE}/shangyou/LICENSE ${GITHUB_WORKSPACE}/repogx/LICENSE
         for X in $(find ${GITHUB_WORKSPACE}/repogx/build -name "diy-part.sh" |sed 's/\/diy-part.sh//g'); do mv "${X}"/diy-part.sh "${X}"/diy-part.sh.bak; done
         for X in $(find ${GITHUB_WORKSPACE}/repogx/build -name "settings.ini" |sed 's/\/settings.ini//g'); do mv "${X}"/settings.ini "${X}"/settings.ini.bak; done
-        for X in $(grep "\"LEDE\"" -rl "${GITHUB_WORKSPACE}/repogx/build" |grep "settings.ini" |sed 's/\/settings.*//g' |uniq); do cp -Rf shangyou/build/Lede_source/* "${X}"; done
-        for X in $(grep "\"LIENOL\"" -rl "${GITHUB_WORKSPACE}/repogx/build" |grep "settings.ini" |sed 's/\/settings.*//g' |uniq); do cp -Rf shangyou/build/Lienol_source/* "${X}"; done
-        for X in $(grep "\"IMMORTAL\"" -rl "${GITHUB_WORKSPACE}/repogx/build" |grep "settings.ini" |sed 's/\/settings.*//g' |uniq); do cp -Rf shangyou/build/Mortal_source/* "${X}"; done
-        for X in $(grep "\"TIANLING\"" -rl "${GITHUB_WORKSPACE}/repogx/build" |grep "settings.ini" |sed 's/\/settings.*//g' |uniq); do cp -Rf shangyou/build/Tianling_source/* "${X}"; done
-        [[ -d ${GITHUB_WORKSPACE}/repogx/build/openwrt_amlogic ]] && cp -Rf ${GITHUB_WORKSPACE}/shangyou/build/openwrt_amlogic/* ${GITHUB_WORKSPACE}/repogx/build/openwrt_amlogic/
+        for X in $(grep "\"COOLSNOWWOLF\"" -rl "${GITHUB_WORKSPACE}/repogx/build" |grep "settings.ini" |sed 's/\/settings.*//g' |uniq); do cp -Rf shangyou/build/Lede/* "${X}"; done
+        for X in $(grep "\"LIENOL\"" -rl "${GITHUB_WORKSPACE}/repogx/build" |grep "settings.ini" |sed 's/\/settings.*//g' |uniq); do cp -Rf shangyou/build/Lienol/* "${X}"; done
+        for X in $(grep "\"IMMORTALWRT\"" -rl "${GITHUB_WORKSPACE}/repogx/build" |grep "settings.ini" |sed 's/\/settings.*//g' |uniq); do cp -Rf shangyou/build/Immortalwrt/* "${X}"; done
+        for X in $(grep "\"XWRT\"" -rl "${GITHUB_WORKSPACE}/repogx/build" |grep "settings.ini" |sed 's/\/settings.*//g' |uniq); do cp -Rf shangyou/build/X_wrt/* "${X}"; done
+        for X in $(grep "\"OFFICIAL\"" -rl "${GITHUB_WORKSPACE}/repogx/build" |grep "settings.ini" |sed 's/\/settings.*//g' |uniq); do cp -Rf shangyou/build/Official/* "${X}"; done
+        for X in $(grep "\"AMLOGIC\"" -rl "${GITHUB_WORKSPACE}/repogx/build" |grep "settings.ini" |sed 's/\/settings.*//g' |uniq); do cp -Rf shangyou/build/Amlogic/* "${X}"; done
+        
         if [[ -n "$(ls -A "${GITHUB_WORKSPACE}/repogx/.github/workflows/build-openwrt.yml" 2>/dev/null)" ]]; then
           echo "CRON2=$(grep -A 1 'schedule:' repogx/.github/workflows/build-openwrt.yml |awk 'NR==2' |sed 's/^[ ]*//g' |sed s/^#// |sed 's/^[ ]*//g' |cut -d "#" -f1 |sed 's/\//\\&/g' |sed 's/\*/\\&/g')" >> ${GITHUB_ENV}
           echo "CRON1=$(grep -A 1 'schedule:' shangyou/.github/workflows/build-openwrt.yml |awk 'NR==2' |sed 's/^[ ]*//g' |sed s/^#// |sed 's/^[ ]*//g' |sed 's/\//\\&/g' |sed 's/\*/\\&/g')" >> ${GITHUB_ENV}
