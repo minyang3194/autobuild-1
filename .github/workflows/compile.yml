@@ -66,18 +66,18 @@ jobs:
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /usr/lib/jvm /opt/ghc
         source build/${matrixtarget}/common.sh && Diy_update
         sudo timedatectl set-timezone "$TZ"
-        sudo mkdir -p /${{ env.DIYWORKING }}
-        sudo chown $USER:$GROUPS /${{ env.DIYWORKING }}
+        sudo mkdir -p /workdir
+        sudo chown $USER:$GROUPS /workdir
         docker rmi $(docker images -q)
         sudo -E apt-get -y remove --purge azure-cli ghc zulu* llvm* firefox google* dotnet* powershell mysql* php* mssql-tools msodbcsql17 android*
         sudo -E apt-get -y autoremove --purge
         sudo rm -rf /etc/mysql /etc/php /swapfile
 
     - name: 下载"${{matrix.target}}"源码
-      working-directory: /${{ env.DIYWORKING }}
+      working-directory: /workdir
       run: |
         git clone -b "${REPO_BRANCH}" --single-branch "${REPO_URL}" openwrt
-        ln -sf /${{ env.DIYWORKING }}/openwrt ${GITHUB_WORKSPACE}/openwrt
+        ln -sf /workdir/openwrt ${GITHUB_WORKSPACE}/openwrt
         source ${GITHUB_WORKSPACE}/build/${{matrix.target}}/common.sh && Diy_checkout
     
     - name: 公 告
