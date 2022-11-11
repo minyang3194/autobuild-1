@@ -42,9 +42,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [COOLSNOWWOLF,IMMORTALWRT,XWRT]
-        
-        # [COOLSNOWWOLF,IMMORTALWRT,LIENOL,XWRT,AMLOGIC]
+        target: [Lede,Immortalwrt,Lienol,X_wrt,Official,Amlogic]
+
+        # [Lede,Immortalwrt,Lienol,X_wrt,Official,Amlogic]
 
     steps:
     - name: 准备结束
