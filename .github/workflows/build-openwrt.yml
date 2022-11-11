@@ -105,7 +105,8 @@ jobs:
       working-directory: /${{ env.DIYWORKING }}
       run: |
         git clone -b "${REPO_BRANCH}" --single-branch "${REPO_URL}" openwrt
-        ln -sf /${{ env.DIYWORKING }}/openwrt ${GITHUB_WORKSPACE}/openwrt
+        ln -sf /${{ env.DIYWORKING }}/openwrt
+        source ${GITHUB_WORKSPACE}/build/${{matrix.target}}/common.sh && Diy_checkout
     
     - name: 公 告
       run: |
