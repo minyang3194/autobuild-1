@@ -7,15 +7,15 @@
 
 export IPv4_ipaddr="192.168.2.2"           # 修改openwrt后台地址(填0为关闭)
 export Netmask_netm="255.255.255.0"        # IPv4 子网掩码（默认：255.255.255.0）(填0为关闭)
-export Op_name="OpenWrt-123"               # 修改主机名称为OpenWrt-123(填0为关闭)
+# export Op_name="OpenWrt-123"               # 修改主机名称为OpenWrt-123(填0为关闭)
 
-export Router_gateway="192.168.2.1"         # 旁路由设置 IPv4 网关(填0为关闭)
-export Lan_DNS="180.76.76.76 223.5.5.5"     # 旁路由设置 DNS(多个DNS要用空格分开)(填0为关闭)
-export IPv4_Broadcast="192.168.2.255"       # 设置 IPv4 广播(填0为关闭)
-export Close_DHCP="1"                       # 旁路由关闭DHCP功能(1为开,0为关闭)
-export Delete_Bridge="1"                    # 旁路由去掉桥接模式(1为开,0为关闭)
-export ttyd_Nopassword="1"                  # 设置ttyd免密登录(1为开,0为关闭)
-export filter_aaaa="1"                      # 关闭IPv6 DNS解析记录(1为开,0为关闭)
+# export Router_gateway="192.168.2.1"         # 旁路由设置 IPv4 网关(填0为关闭)
+# export Lan_DNS="180.76.76.76 223.5.5.5"     # 旁路由设置 DNS(多个DNS要用空格分开)(填0为关闭)
+#export IPv4_Broadcast="192.168.2.255"       # 设置 IPv4 广播(填0为关闭)
+#export Close_DHCP="1"                       # 旁路由关闭DHCP功能(1为开,0为关闭)
+#export Delete_Bridge="1"                    # 旁路由去掉桥接模式(1为开,0为关闭)
+#export ttyd_Nopassword="1"                  # 设置ttyd免密登录(1为开,0为关闭)
+#export filter_aaaa="1"                      # 关闭IPv6 DNS解析记录(1为开,0为关闭)
 
 export Remove_IPv6="1"                      # 关闭固件里面所有IPv6选项(1为开,0为关闭)
 export Create_IPV6_interface="1"            # 爱快+OP双系统时,爱快接管IPV6,在OP创建IPV6的lan口接收IPV6信息(1为开,0为关闭)
